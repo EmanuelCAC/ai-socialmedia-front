@@ -3,18 +3,18 @@ import Label from "@/components/Label";
 import Link from "next/link";
 
 
-export default function Home() {
+export default function Singup() {
   return (
     <>
       <main className="flex-1 flex flex-col gap-6 px-4 justify-center items-center">
-        <h2 className="font-semibold text-4xl mb-4">Welcome to <span className="text-pink-700">AI</span>Social Media</h2>
+        <h2 className="font-semibold text-4xl mb-4">Create <span className="text-pink-700">Your</span> Account</h2>
 
         <form className="flex-1 flex flex-col min-w-64 w-fit">
-          <h1 className="text-2xl font-medium">Sign in</h1>
+          <h1 className="text-2xl font-medium">Sign up</h1>
           <p className="text-sm text-foreground">
-            Don't have an account?{" "}
-            <Link className="text-foreground font-medium underline" href="/sign-up">
-              Sign up
+            Already have an account?{" "}
+            <Link className="text-primary font-medium underline" href="/">
+              Sign in
             </Link>
           </p>
           <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
@@ -30,7 +30,7 @@ export default function Home() {
               required
             />
             <button type="submit" className="w-full h-10 bg-pink-700 text-white rounded-md hover:bg-pink-800 transition-colors duration-200">
-              Sign in
+              Sign up
             </button>
           </div>
         </form>
