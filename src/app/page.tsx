@@ -1,39 +1,28 @@
-import Input from "@/components/Input";
-import Label from "@/components/Label";
+"use client"
+import { useAuthStore } from "@/stores/authStore";
+import Image from "next/image";
+import images from "@/constants/images"
 import Link from "next/link";
 
 
 export default function Home() {
+
+  const { login } = useAuthStore();
+
   return (
     <>
-      <main className="flex-1 flex flex-col gap-6 px-4 justify-center items-center">
-        <h2 className="font-semibold text-4xl mb-4">Welcome to <span className="text-pink-700">AI</span>Social Media</h2>
-
-        <form className="flex-1 flex flex-col min-w-64 w-fit">
-          <h1 className="text-2xl font-medium">Sign in</h1>
-          <p className="text-sm text-foreground">
-            Don't have an account?{" "}
-            <Link className="text-foreground font-medium underline" href="/sign-up">
-              Sign up
-            </Link>
-          </p>
-          <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
-            <Label htmlFor="email">Email</Label>
-            <Input name="email" placeholder="you@example.com" required />
-            <div className="flex justify-between items-center">
-              <Label htmlFor="password">Password</Label>
-            </div>
-            <Input
-              type="password"
-              name="password"
-              placeholder="Your password"
-              required
-            />
-            <button type="submit" className="w-full h-10 bg-pink-700 text-white rounded-md hover:bg-pink-800 transition-colors duration-200">
-              Sign in
-            </button>
-          </div>
-        </form>
+      <main className="flex-1 flex flex-col gap-3 px-4 justify-center items-center">
+        <Image src={images.logo} height={200} alt="logo"/>
+        <p className="text-sm text-gray-300 mb-4 text-center">
+          Criatividade automatizada. <br/>
+          Resultados reais.
+        </p>
+        <Link href="/sign-in" className="bg-[#A29D37] px-5 py-2 text-white rounded-2xl transition-colors duration-200">
+          ENTRAR
+        </Link>
+        <Link href="/sign-up" className="bg-[#EC3F1F] px-5 py-2 text-white rounded-2xl transition-colors duration-200">
+          CRIAR CONTA
+        </Link>
       </main>
     </>
   );
