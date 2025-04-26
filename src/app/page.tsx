@@ -7,8 +7,6 @@ import Link from "next/link";
 
 export default function Home() {
 
-  const { login } = useAuthStore();
-
   return (
     <>
       <main className="flex-1 flex flex-col gap-3 px-4 justify-center items-center">
@@ -17,10 +15,10 @@ export default function Home() {
           Criatividade automatizada. <br/>
           Resultados reais.
         </p>
-        <Link href="/sign-in" className="bg-[#A29D37] px-5 py-2 text-white rounded-2xl transition-colors duration-200">
+        <Link href="/sign-in" className="bg-[#A29D37] px-5 py-2 text-white rounded-2xl">
           ENTRAR
         </Link>
-        <Link href="/sign-up" className="bg-[#EC3F1F] px-5 py-2 text-white rounded-2xl transition-colors duration-200">
+        <Link href="/sign-up" className="bg-[#EC3F1F] px-5 py-2 text-white rounded-2xl">
           CRIAR CONTA
         </Link>
       </main>
