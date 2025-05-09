@@ -38,14 +38,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={geistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
-          <div className="flex-1 w-full flex flex-col gap-20 items-center">            
+        <main className="min-h-[calc(100vh-240px)] flex flex-col items-center m-30">
+          <div className="flex-1 w-full flex flex-col items-center">            
             {isLogged ? (
               <SideNavBar>
                 {children}
               </SideNavBar>
             ) : (
-            <div className="flex flex-col gap-20 min-w-[500px] min-h-screen justify-center items-center">
+            <div className="flex flex-col gap-20 min-w-[500px] min-h-[calc(100vh-240px)] justify-center items-center">
               {children}
             </div>)}
           </div>
