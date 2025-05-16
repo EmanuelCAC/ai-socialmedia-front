@@ -1,14 +1,13 @@
 "use client"
-import Input from "@/components/Input";
-import Label from "@/components/Label";
-import { useAuthStore } from "@/stores/authStore";
-import Link from "next/link";
+
 import Image from "next/image";
 import images from "@/constants/images";
 import { useEffect, useRef, useState } from "react";
+import Input from "@/components/Input";
+import Label from "@/components/Label";
 
-export default function Signin() {
-  const [selected, setSelected] = useState(0);
+export default function Ai() {
+
   const [text, setText] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -24,75 +23,61 @@ export default function Signin() {
     autoResize(); // run on initial render
   }, [text]);
 
-  const data = [
-    {name: "copie1", messages: [
-      {role: "user", content: "Oi, tudo bem?"},
-      {role: "assistant", content: "Oi, tudo bem? Como posso ajudar você hoje?"},
-      {role: "user", content: "Qual é o seu nome?"},
-      {role: "assistant", content: "Meu nome é Assistente. E o seu?"},
-    ]},
-    {name: "copie2", messages: [
-      {role: "user", content: "Oi, tudo bem?"},
-      {role: "assistant", content: "Oi, tudo bem? Como posso ajudar você hoje?"},
-      {role: "user", content: "Qual é o seu nome?"},
-      {role: "assistant", content: "Meu nome é Mateus. E o seu?"},
-    ]},
-    {name: "copie3", messages: [
-      {role: "user", content: "Oi, tudo bem?"},
-      {role: "assistant", content: "Oi, tudo bem? Como posso ajudar você hoje?"},
-      {role: "user", content: "Qual é o seu nome?"},
-      {role: "assistant", content: "Meu nome é Azul. E o seu?"},
-    ]},
-    {name: "copie4", messages: [
-      {role: "user", content: "Oi, tudo bem?"},
-      {role: "assistant", content: "Oi, tudo bem? Como posso ajudar você hoje?"},
-      {role: "user", content: "Qual é o seu nome?"},
-      {role: "assistant", content: "Meu nome é 'E o seu?'"},
-    ]},
-    {name: "copie5", messages: [
-      {role: "user", content: "Oi, tudo bem?"},
-      {role: "assistant", content: "Oi, tudo bem? Como posso ajudar você hoje?"},
-      {role: "user", content: "Qual é o seu nome?"},
-      {role: "assistant", content: "Meu nome é Goabits. E o seu?"},
-    ]},
-  ]
-
   return (
-    <div className="bg-[#D2D15B] rounded-r-[40px] rounded-l-[50px] flex flex-row h-full">
-      <div className="bg-[#918E27] border-2 border-[#293D02] shadow-[2px_0_10px_rgba(0,0,0,0.7)] rounded-[40px] flex-2/7 pt-20">
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className={`p-4 px-6 bg-[#B7BB4C] w-full hover:bg-[#C8CE64] border-b-2 border-t-2 ${selected === index ? 'bg-[#C8CE64] border-[#293D02]' : 'border-[#B7BB4C]'}`}
-            onClick={() => setSelected(index)}
-          >
-            <p className={`font-semibold text-lg cursor-pointer ${selected === index ? 'text-[#87210E]' : 'text-[#272323]'}`}>
-              {item.name}
-            </p>
+    <div className="bg-[#FFE4D0] rounded-r-[40px] rounded-l-[50px] flex flex-row h-full">
+      <div className="bg-[#F64939] border-2 border-[#87210E] shadow-[2px_0_10px_rgba(0,0,0,0.7)] rounded-[40px] flex-2/7 flex flex-col pt-10 items-center gap-5">
+        <div className="bg-[#87210E] aspect-square rounded-[20px] max-w-[280px] max-h-[280px] p-[15px]">
+          <div className="bg-white max-w-full max-h-full border-[#87210E] aspect-square rounded-[15px] flex flex-col justify-center items-center">
+            <Image src={images.goiabits} alt="Goiabits" className="aspect-square h-[70%] w-[70%]" />
+            <p className="text-[#87210E] font-bold text-xl">LOJA GOIABA</p>
           </div>
-        ))}
-      </div>
-      <div className="rounded-[40px] flex-5/7 px-10 py-20 relative">
-        {data[selected].messages.map((message, index) => (
-          <div key={index} className={`flex flex-col ${message.role === 'user' ? 'items-end' : 'items-start'} mb-2`}>
-            <div className={`p-4 px-6 rounded-[20px]  ${message.role === 'user' ? 'bg-[#FFFFFF] rounded-br-none' : 'bg-[#918E27] rounded-bl-none'}`}>
-              <p className={`text-sm text-[#000000]`}>
-                {message.content}
-              </p>
-            </div>
-          </div>
-        ))}
-        <div className="absolute bottom-10 left-[50%] transform-[translate(-50%,0)] w-[80%] flex flex-row gap-3 items-center border-2 border-[#293D02] bg-[#C8CE64] rounded-[20px] p-2">
-          <textarea
-            placeholder="Digite sua mensagem"
-            value={text}
-            className="text-black focus-visible:outline-none text-wrap w-full resize-none min-h-[50px] max-h-[150px] custom-scroll"
-            onChange={(e) => setText(e.target.value)}
-            rows={1}
-            ref={textareaRef}
-          />
-          <Image src={images.send} alt="copies" width={40} height={40} />
         </div>
+        <div className="bg-[#FD6E4E] border border-[#87210E] flex flex-col text-black w-[65%] text-sm px-3 py-1 rounded-[15px] gap-3">
+          <div className="w-full flex flex-row">
+            <p className="flex-1">Criado em:</p>
+            <p className="flex-1">12/05/2025</p>
+          </div>
+          <div className="w-full flex flex-row">
+            <p className="flex-1">N° de Copies:</p>
+            <p className="flex-1">14</p>
+          </div>
+        </div>
+        <Image src={images.controlls} alt="controlls" className="max-w-[270px] my-auto" />
+      </div>
+      <div className="rounded-[40px] flex-5/7 flex flex-col p-10 ">
+        <form className="flex-1 flex flex-col gap-2">
+          <button className="bg-[#EC3F1F] border border-[#87210E] px-5 py-2 text-white rounded-2xl flex gap-2 ml-auto mr-10">
+            EDITAR <Image src={images.edit} alt="edit" className="h-[20px] w-[20px] aspect-square" />
+          </button>
+          <Label htmlFor="name" className="font-semibold text-[#87210E]">NAME</Label>
+          <Input
+            name="name"
+            className="bg-[#FCC195] border-2 border-[#EC3F1F] text-black flex h-10 w-full rounded-xl border-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+            placeholder=""
+            required
+          />
+
+          <Label htmlFor="description" className="font-semibold text-[#87210E] pt-3">DESCRIÇÃO</Label>
+          <div className="bg-[#FCC195] border-2 border-[#EC3F1F] flex w-full rounded-xl px-3">
+            <textarea
+              placeholder=""
+              value={text}
+              className="text-black w-full focus-visible:outline-none text-wrap resize-none min-h-[100px] max-h-[300px] custom-scroll-red text-sm"
+              onChange={(e) => setText(e.target.value)}
+              rows={1}
+              ref={textareaRef}
+            />
+          </div>
+
+          <div className="flex flex-row justify-end mt-auto gap-5 pr-10">
+            <button className="bg-[#EC3F1F] border border-[#87210E] px-5 py-2 text-white rounded-2xl flex gap-2">
+              EXCLUIR <Image src={images.edit} alt="edit" className="h-[20px] w-[20px] aspect-square" />
+            </button>
+            <button className="bg-[#B7BB4C] border border-[#293D02] px-5 py-2 text-white rounded-2xl flex gap-2">
+              SALVAR <Image src={images.edit} alt="edit" className="h-[20px] w-[20px] aspect-square" />
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

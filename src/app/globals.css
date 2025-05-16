@@ -50,3 +50,29 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #918E27 #D2D15B;
 }
+
+/* Custom scrollbar red*/
+.custom-scroll-red::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 6px;
+}
+
+.custom-scroll-red::-webkit-scrollbar-track {
+  background: #FFE4D0;
+  border-radius: 6px;
+}
+
+.custom-scroll-red::-webkit-scrollbar-thumb {
+  background-color: #FFE4D0;
+  border-radius: 6px;
+}
+
+.custom-scroll-red::-webkit-scrollbar-thumb:hover {
+  background-color: #87210E;
+}
+
+/* Firefox */
+.custom-scroll-red {
+  scrollbar-width: thin;
+  scrollbar-color: #87210E #FFE4D0;
+}
