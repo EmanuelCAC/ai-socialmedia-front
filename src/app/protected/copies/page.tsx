@@ -80,8 +80,8 @@ export default function Copies() {
   ]
 
   return (
-    <div className="bg-[#D2D15B] rounded-r-[40px] rounded-l-[50px] flex flex-row h-full relative">
-      <div className="bg-[#918E27] border-2 border-[#293D02] shadow-[2px_0_10px_rgba(0,0,0,0.7)] rounded-[40px] flex-2/7 pt-10 z-30">
+    <div className="bg-[#D2D15B] rounded-r-[50px] rounded-l-[50px] flex flex-row h-full relative">
+      {/* <div className="bg-[#918E27] border-2 border-[#293D02] shadow-[2px_0_10px_rgba(0,0,0,0.7)] rounded-[40px] flex-2/7 pt-10 z-30">
         <button className="bg-[#EC3F1F] border border-[#87210E] p-2 text-white rounded-2xl flex gap-2 ml-auto mr-5 mb-10">
           + NOVA COPY
         </button>
@@ -96,7 +96,7 @@ export default function Copies() {
             </p>
           </div>
         ))}
-      </div>
+      </div> */}
       <div className="rounded-[40px] flex-5/7 flex flex-col pt-10 max-h-[calc(100vh-240px)]">
         <div className="flex-1 max-h-full overflow-y-auto custom-scroll px-10" ref={chatRef}>
           {data[selected].messages.map((message, index) => (
@@ -109,7 +109,7 @@ export default function Copies() {
           </div>
         ))}
         </div>
-          <div className="w-full flex pt-4 pb-8 items-center justify-center rounded-br-[50px] bg-[#B6BC42] z-20">
+          <div className="w-full flex pt-4 pb-8 items-center justify-center rounded-b-[50px] bg-[#B6BC42] z-20">
             <div className="w-[80%] flex flex-row gap-3 items-center border-2 border-[#293D02] bg-[#C8CE64] rounded-[20px] p-2">
             <textarea
               placeholder="Digite sua mensagem"
@@ -123,7 +123,7 @@ export default function Copies() {
           </div>
         </div>
       </div>
-      <div className="w-[90%] h-10 absolute bottom-0 right-0 bg-[#B6BC42] rounded-br-[50px] z-10">
+      <div className="w-[90%] h-11 absolute bottom-0 right-0 bg-[#B6BC42] rounded-b-[50px] z-10">
 
       </div>
     </div>
