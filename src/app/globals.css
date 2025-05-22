@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1E1E1E ;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1E1E1E ;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,56 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #D2D15B;
+  border-radius: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #B7BB4C; /* Tailwind slate-300 */
+  border-radius: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #918E27; /* Tailwind slate-400 */
+}
+
+/* Firefox */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #918E27 #D2D15B;
+}
+
+/* Custom scrollbar red*/
+.custom-scroll-red::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 6px;
+}
+
+.custom-scroll-red::-webkit-scrollbar-track {
+  background: #FFE4D0;
+  border-radius: 6px;
+}
+
+.custom-scroll-red::-webkit-scrollbar-thumb {
+  background-color: #FFE4D0;
+  border-radius: 6px;
+}
+
+.custom-scroll-red::-webkit-scrollbar-thumb:hover {
+  background-color: #87210E;
+}
+
+/* Firefox */
+.custom-scroll-red {
+  scrollbar-width: thin;
+  scrollbar-color: #87210E #FFE4D0;
 }
