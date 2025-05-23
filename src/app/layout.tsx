@@ -45,7 +45,7 @@ export default function RootLayout({
                 {children}
               </SideNavBar>
             ) : (
-            <div className="flex flex-col gap-20 min-w-[500px] min-h-[calc(100vh-240px)] justify-center items-center">
+            <div className="flex flex-col gap-20 min-w-[500px] max-h-[calc(100vh-240px)] justify-center items-center">
               {children}
             </div>)}
           </div>

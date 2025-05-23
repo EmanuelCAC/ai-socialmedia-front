@@ -39,8 +39,8 @@ const SideNavBar = ({ children }: Readonly<{ children: React.ReactNode }>) => {
         </div>
         <div
           className="flex flex-row w-fit gap-5 mt-auto border-2 border-[#C8CE64] rounded-[20px] p-4 bg-[#272323] items-center justify-center">
-          <Image src={images.config} alt="config" width={50} height={50} className='cursor-pointer p-2 rounded-lg hover:bg-foreground/10' onClick={() => redirect('/protected/copies')} />
-          <p className="text-base font-semibold border-2 border-[#87210E] bg-[#EC3F1F] p-2 rounded-[16px] cursor-pointer" onClick={() => logout()}>LOG-OUT</p>
+          
+          <p className="text-base font-semibold border-2 border-[#87210E] bg-[#EC3F1F] p-2 rounded-[16px] cursor-pointer" onClick={() => logout()}> LOG-OUT</p>
         </div>
       </div>
       <div className="min-h-[calc(100vh-240px)] w-full transition-all duration-500">
