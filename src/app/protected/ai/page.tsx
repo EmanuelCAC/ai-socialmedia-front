@@ -19,19 +19,22 @@ export default function Ai() {
     const description = formData.get("description")
 
     if (typeof name === "string" && typeof description === "string") {
-      // const rawData = await fetch("", {
-      //   method: 'POST',
-      //   headers: {
-      //     "Content-type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     description
-      //   })
-      // })
+      const rawData = await fetch("http://localhost:3000/ai/initialize", {
+        method: 'POST',
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+          context: description
+        })
+      })
 
-      // const data = await rawData.json()
+      const data = await rawData.json()
 
-      saveContext(name, description)
+      console.log(data)
+      if (data.message === "AI model initialized successfully")
+        console.log('saved')
+        saveContext(name, description)
     }
   }
 
@@ -93,7 +96,7 @@ export default function Ai() {
           </div>
           <div className="flex flex-row justify-end mt-auto gap-5 pr-10">
             <button
-              className="bg-[#B7BB4C] border border-[#293D02] px-5 py-2 text-white rounded-2xl flex gap-2"
+              className="bg-[#B7BB4C] border border-[#293D02] px-5 py-2 text-white rounded-2xl flex gap-2 cursor-pointer active:bg-[#293D02] "
               formAction={handleContext}
             >
               SALVAR <Image src={images.edit} alt="edit" className="h-[20px] w-[20px] aspect-square" />

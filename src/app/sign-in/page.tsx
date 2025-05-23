@@ -18,10 +18,10 @@ export default function Signin() {
     const password = formData.get("password")
 
     if (typeof email === "string" && typeof password === "string") {
-      const rawData = await fetch("http://localhost:3001/auth/login", {
+      const rawData = await fetch("http://localhost:3000/auth/login", {
         method: 'POST',
         headers: {
-          "Content-type": "application/json",
+          "Content-type": "application/json"
         },
         body: JSON.stringify({
           email,
@@ -35,7 +35,6 @@ export default function Signin() {
       else
         setError(data.message)
     }
-    // login('email', 'data.token')
   }
 
 

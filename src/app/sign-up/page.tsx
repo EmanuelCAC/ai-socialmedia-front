@@ -17,6 +17,7 @@ export default function Singup() {
   const handleSignUp = async (formData: FormData) => {
     const email = formData.get("email")
     const password = formData.get("password")
+    let status = ''
 
 
     try {
@@ -24,20 +25,22 @@ export default function Singup() {
         "email": email,
         "password": password
       })
-      const { data } = await axios.post("http://192.168.100.106:3001/auth/register", body, {
+      const { data } = await axios.post("http://localhost:3000/auth/register", body, {
         headers: {
          'Content-Type': 'application/json',
          "Accept": "*/*"
         }
       })
 
-      if (data.message === "User registered successfully")
-        redirect('/sign-in')
-      else
-        setError(data.message)
+      status = data.message
     } catch (error) {
       console.log(error)
       setError("Erro ao cadastrar usuário")
+    } finally {
+      if (status === "User registered successfully")
+        redirect('/sign-in')
+      else
+        setError(status)
     }
   } 
 
